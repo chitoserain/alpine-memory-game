@@ -13,8 +13,9 @@
     <style type="text/tailwindcss">
         @layer components {
             .title {
-                @apply text-6xl font-bold text-center my-5 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent;
+                @apply text-4xl md:text-6xl font-bold text-center my-5 bg-gradient-to-r from-[#64748b] to-[#0369a1] bg-clip-text text-transparent;
             }
+
             .grid-container {
                 @apply grid grid-cols-2 gap-2 content-center md:grid-cols-4 md:gap-4 md:p-4;
             }
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-    <div class="container mx-auto" x-data="game()">
+    <div class="container mx-auto px-5 md:px-0" x-data="game()">
         <h1 class="title">Memory Game</h1>
 
         <div class="grid-container">
@@ -66,7 +67,7 @@
                     // Hanya bisa membuka 2 kartu
                     if (this.flippedCards.length === 2) return
 
-                    // Buka / Tutup kartu
+                    // Buka/tutup kartu
                     card.flipped = !card.flipped
 
                     // Cek apakah ada 2 kartu yang terbuka, cek warnanya jika sama
